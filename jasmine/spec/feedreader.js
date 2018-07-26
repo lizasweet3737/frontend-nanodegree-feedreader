@@ -31,7 +31,7 @@ $(function() {
         it('name defined',function(){
             for(let feed of allFeeds){
                 expect(feed.name).toBeDefined();
-                expect(feed.url.name).not.toBe(0);
+                expect(feed.name.length).not.toBe(0);
             }
         });
     });
@@ -73,8 +73,8 @@ $(function() {
             });
         
         it('contain at least one .entry element', function(done) {
-            const feed = document.querySelector('.feed');
-            expect(feed.children.length > 0).toBe(true);
+            const feed = $('.feed .entry');
+            expect(feed.length).toBeGreaterThan(0);
             done();
         });
     });
